@@ -1,4 +1,37 @@
+html, body {
+    background-color: #181818 !important;
+}
+
+.navbar {
+    background-color: #181818;
+    font-weight: 100;
+    letter-spacing: .0.7rem;
+}
+
 .navbar-icon {
     margin: 0px 10px 5px 0px;
 }
 
+.navbar .border-bottom {
+    opacity: 0.8;
+}
+
+.marcador-container {
+    background: #5bf946;
+    border: 1px solid #36ae26;
+}
+
+.marcador {
+    background: #f39d9d;
+    border: 1px solid #f94646;
+}
+
+.conteudo {
+    background: white;
+}
+
+/*
+
+https://blog.hubspot.com/website/opacity-css#:~:text=To%20set%20the%20opacity%20of,invisible).
+
+*/
