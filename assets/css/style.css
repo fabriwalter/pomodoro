@@ -2,6 +2,11 @@ html, body {
     background-color: #181818 !important;
 }
 
+
+
+/* Navbar
+-------------------------- */
+
 .navbar {
     background-color: #181818;
     font-weight: 100;
@@ -16,6 +21,11 @@ html, body {
     opacity: 0.8;
 }
 
+
+
+/* Classes para debug 
+------------------------------ */
+
 .marcador-container {
     background: #5bf946;
     border: 1px solid #36ae26;
@@ -26,9 +36,45 @@ html, body {
     border: 1px solid #f94646;
 }
 
+
+
+
+/* Conteúdo Principal 
+---------------------------- */
+
 .conteudo {
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
 }
+
+.timer {
+    font-size: 8em;
+}
+
+
+
+
+
+/* Botão Start 
+-------------------------- */
+
+
+.div-start-timer {
+    height: 4rem;
+}
+
+.btn-start-timer {
+    width: 75%;
+    height: 100%;
+}
+
+.div-start-timer .btn {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #181818;
+}
+
 
 /*
 
