@@ -5,33 +5,10 @@ class Cronometro {
 
     iniciaContagem() {
         console.log('Chamou o método');
-        
         minutos = 25;
         segundos = 0;
-
-        myInterval = setInterval(function() {
-            
-            /* Lógica para os minutos e segundos */
-            if (segundos == 0) {
-                minutos = minutos - 1;
-                segundos = 60;
-                segundos = segundos - 1;
-            } else {
-                segundos = segundos - 1;
-            }
-
-
-            /* Acabou o tempo */
-            if (minutos == 0 && segundos == 0) {
-                clearInterval(myInterval);
-            }
-
-
-            mostraHora(minutos, segundos);
-        }, 1000)
-
+        startCronometro()
         trocaBotao(btnStartTimer, btnPausaTimer, 'PAUSE');
-
     }
 
 
@@ -58,27 +35,7 @@ class Cronometro {
         console.log('Iremos continuar a contagem!')
         minutos = min;
         segundos = sec;
-
-        myInterval = setInterval(function() {
-            /* Lógica para os minutos e segundos */
-            if (segundos == 0) {
-                minutos = minutos - 1;
-                segundos = 60;
-                segundos = segundos - 1;
-            } else {
-                segundos = segundos - 1;
-            }
-
-
-            /* Acabou o tempo */
-            if (minutos == 0 && segundos == 0) {
-                clearInterval(myInterval);
-            }
-
-
-            mostraHora(minutos, segundos);
-        }, 1000);
-
+        startCronometro()
         trocaBotao(btnContinuaTimer, btnPausaTimer, 'PAUSE');
     }
 
@@ -132,27 +89,24 @@ function trocaBotao(botaoInicial, botaoFinal, conteudo) {
     divBtnTimer.appendChild(botaoFinal);
 }
 
-
-
 function startCronometro() {
+    myInterval = setInterval(function() {
+        /* Lógica para os minutos e segundos */
+        if (segundos == 0) {
+            minutos = minutos - 1;
+            segundos = 60;
+            segundos = segundos - 1;
+        } else {
+            segundos = segundos - 1;
+        }
 
 
-    /* Lógica para os minutos e segundos */
-    if (segundos == 0) {
-        minutos = minutos - 1;
-        segundos = 60;
-        segundos = segundos - 1;
-    } else {
-        segundos = segundos - 1;
-    }
+        /* Acabou o tempo */
+        if (minutos == 0 && segundos == 0) {
+            clearInterval(myInterval);
+        }
 
 
-    /* Acabou o tempo */
-    if (minutos == 0 && segundos == 0) {
-        clearInterval(myInterval);
-    }
-
-
-    mostraHora(minutos, segundos);
-    
+        mostraHora(minutos, segundos);
+    }, 1000);
 }
