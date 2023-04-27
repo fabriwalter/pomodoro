@@ -6,8 +6,8 @@ class Cronometro {
     iniciaContagem() {
         console.log('Chamou o método');
         
-        let minutos = 25;
-        let segundos = 0;
+        minutos = 25;
+        segundos = 0;
 
         myInterval = setInterval(function() {
             
@@ -35,9 +35,6 @@ class Cronometro {
     }
 
 
-
-
-
     iniciaFolgaCurta() {
         console.log('Iniciei a folga');
     }
@@ -52,8 +49,37 @@ class Cronometro {
 
     pausa() {
         console.log('Pausei o relógio');
-        trocaBotao(btnPausaTimer, btnStartTimer, 'START');
+        trocaBotao(btnPausaTimer, btnContinuaTimer, 'START');
         clearInterval(myInterval);
+    }
+
+
+    continuaContagem(min, sec) {
+        console.log('Iremos continuar a contagem!')
+        minutos = min;
+        segundos = sec;
+
+        myInterval = setInterval(function() {
+            /* Lógica para os minutos e segundos */
+            if (segundos == 0) {
+                minutos = minutos - 1;
+                segundos = 60;
+                segundos = segundos - 1;
+            } else {
+                segundos = segundos - 1;
+            }
+
+
+            /* Acabou o tempo */
+            if (minutos == 0 && segundos == 0) {
+                clearInterval(myInterval);
+            }
+
+
+            mostraHora(minutos, segundos);
+        }, 1000);
+
+        trocaBotao(btnContinuaTimer, btnPausaTimer, 'PAUSE');
     }
 
 }
@@ -62,6 +88,8 @@ class Cronometro {
 const cronometro = new Cronometro();
 const data = new Date();
 let myInterval;
+let minutos;
+let segundos;
 
 /* Elementos HTML selecionados */
 
@@ -69,12 +97,14 @@ let btnStartTimer = document.querySelector('#btn-start-timer');
 let relogioVisor = document.querySelector('#timer');
 let divBtnTimer = document.querySelector('#div-btn-timer');
 let btnPausaTimer = document.createElement('button');
+let btnContinuaTimer = document.createElement('button');
 
 
 /* Captura de eventos */
 
 btnStartTimer.addEventListener('click', () => cronometro.iniciaContagem());
 btnPausaTimer.addEventListener('click', () => cronometro.pausa());
+btnContinuaTimer.addEventListener('click', () => cronometro.continuaContagem(minutos, segundos));
 
 
 
