@@ -76,6 +76,13 @@ html, body {
 }
 
 
+/* Sobreescrevendo Bootstrap
+---------------------------------- */
+
+.btn {
+    --bs-btn-border-width:none !important;
+}
+
 /*
 
 https://blog.hubspot.com/website/opacity-css#:~:text=To%20set%20the%20opacity%20of,invisible).
