@@ -9,7 +9,6 @@ html, body {
 
 .navbar {
     background-color: #181818;
-    font-weight: 100;
     letter-spacing: .0.7rem;
 }
 
@@ -18,10 +17,12 @@ html, body {
 }
 
 .navbar .border-bottom {
-    opacity: 0.8;
+    opacity: 1;
 }
 
-
+.navbar-brand {
+    font-weight: 600;
+}
 
 /* Classes para debug 
 ------------------------------ */
@@ -95,8 +96,15 @@ html, body {
 }
 
 
-/*
+/* Footer
+------------------------------ */
 
-https://blog.hubspot.com/website/opacity-css#:~:text=To%20set%20the%20opacity%20of,invisible).
+.conteudo-footer {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7em;
+}
 
-*/
+.footer-arr {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.6em;
+}
