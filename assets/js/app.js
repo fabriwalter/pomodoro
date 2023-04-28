@@ -13,6 +13,7 @@ class Cronometro {
         console.log('Pausei o relógio');
         trocaBotao(btnPausaTimer, btnContinuaTimer, 'START');
         clearInterval(myInterval);
+        myInterval = null;
     }
 
 
@@ -32,6 +33,7 @@ const data = new Date();
 let myInterval;
 let minutos = 25;
 let segundos = 0;
+
 
 /* Elementos HTML selecionados */
 
