@@ -9,19 +9,6 @@ class Cronometro {
         trocaBotao(btnStartTimer, btnPausaTimer, 'PAUSE');
     }
 
-
-    iniciaFolgaCurta() {
-        console.log('Iniciei a folga');
-    }
-
-    iniciaFolgaLonga() {
-        console.log('Iniciei a folga longa!');
-    }
-
-
-
-
-
     pausa() {
         console.log('Pausei o relógio');
         trocaBotao(btnPausaTimer, btnContinuaTimer, 'START');
@@ -68,9 +55,19 @@ btnContinuaTimer.addEventListener('click', () => cronometro.continuaContagem(min
 
 
 btnPomodoro.addEventListener('click', () => {
+
+    if (myInterval) {
+        if (confirm('The timer is still running, are you sure you want to switch?')) {
+            clearInterval(myInterval);
+            divBtnTimer.removeChild(divBtnTimer.firstElementChild);
+            divBtnTimer.appendChild(btnStartTimer);       
+        } else {
+            return;
+        }
+    }
+
     minutos = 25;
     segundos = 0;
-
     timer.innerHTML = '25:00';
 
     if(btnShortBreak.classList.contains('selected-btn')) {
@@ -83,9 +80,19 @@ btnPomodoro.addEventListener('click', () => {
 });
 
 btnShortBreak.addEventListener('click', () => {
+    
+    if (myInterval) {
+        if (confirm('The timer is still running, are you sure you want to switch?')) {
+            clearInterval(myInterval);
+            divBtnTimer.removeChild(divBtnTimer.firstElementChild);
+            divBtnTimer.appendChild(btnStartTimer);
+        } else {
+            return;
+        }
+    }
+
     minutos = 5;
     segundos = 0;
-
     timer.innerHTML = '05:00';
     
     if(btnPomodoro.classList.contains('selected-btn')) {
@@ -99,9 +106,19 @@ btnShortBreak.addEventListener('click', () => {
 });
 
 btnLongBreak.addEventListener('click', () => {
+    
+    if (myInterval) {
+        if (confirm('The timer is still running, are you sure you want to switch?')) {
+            clearInterval(myInterval);
+            divBtnTimer.removeChild(divBtnTimer.firstElementChild);
+            divBtnTimer.appendChild(btnStartTimer);
+        } else {
+            return;
+        }
+    }
+    
     minutos = 15;
     segundos = 0;
-
     timer.innerHTML = '15:00';
 
     if(btnPomodoro.classList.contains('selected-btn')) {
@@ -141,6 +158,7 @@ function trocaBotao(botaoInicial, botaoFinal, conteudo) {
 
 function startCronometro() {
     myInterval = setInterval(function() {
+        
         /* Lógica para os minutos e segundos */
         if (segundos == 0) {
             minutos = minutos - 1;
@@ -150,12 +168,10 @@ function startCronometro() {
             segundos = segundos - 1;
         }
 
-
         /* Acabou o tempo */
         if (minutos == 0 && segundos == 0) {
             clearInterval(myInterval);
         }
-
 
         mostraHora(minutos, segundos);
     }, 1000);
