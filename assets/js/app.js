@@ -5,8 +5,6 @@ class Cronometro {
 
     iniciaContagem() {
         console.log('Chamou o método');
-        minutos = 25;
-        segundos = 0;
         startCronometro()
         trocaBotao(btnStartTimer, btnPausaTimer, 'PAUSE');
     }
@@ -45,8 +43,8 @@ class Cronometro {
 const cronometro = new Cronometro();
 const data = new Date();
 let myInterval;
-let minutos;
-let segundos;
+let minutos = 25;
+let segundos = 0;
 
 /* Elementos HTML selecionados */
 
@@ -56,6 +54,11 @@ let divBtnTimer = document.querySelector('#div-btn-timer');
 let btnPausaTimer = document.createElement('button');
 let btnContinuaTimer = document.createElement('button');
 
+let btnPomodoro = document.querySelector('#btnPomodoro');
+let btnShortBreak = document.querySelector('#btnShortBreak');
+let btnLongBreak = document.querySelector('#btnLongBreak');
+
+
 
 /* Captura de eventos */
 
@@ -63,6 +66,53 @@ btnStartTimer.addEventListener('click', () => cronometro.iniciaContagem());
 btnPausaTimer.addEventListener('click', () => cronometro.pausa());
 btnContinuaTimer.addEventListener('click', () => cronometro.continuaContagem(minutos, segundos));
 
+
+btnPomodoro.addEventListener('click', () => {
+    minutos = 25;
+    segundos = 0;
+
+    timer.innerHTML = '25:00';
+
+    if(btnShortBreak.classList.contains('selected-btn')) {
+        btnShortBreak.classList.remove('selected-btn');
+        btnPomodoro.classList.add('selected-btn');
+    } else if (btnLongBreak.classList.contains('selected-btn')) {
+        btnLongBreak.classList.remove('selected-btn');
+        btnPomodoro.classList.add('selected-btn');
+    }
+});
+
+btnShortBreak.addEventListener('click', () => {
+    minutos = 5;
+    segundos = 0;
+
+    timer.innerHTML = '05:00';
+    
+    if(btnPomodoro.classList.contains('selected-btn')) {
+        btnPomodoro.classList.remove('selected-btn');
+        btnShortBreak.classList.add('selected-btn');
+    } else if (btnLongBreak.classList.contains('selected-btn')) {
+        btnLongBreak.classList.remove('selected-btn');
+        btnShortBreak.classList.add('selected-btn');
+    }
+
+});
+
+btnLongBreak.addEventListener('click', () => {
+    minutos = 15;
+    segundos = 0;
+
+    timer.innerHTML = '15:00';
+
+    if(btnPomodoro.classList.contains('selected-btn')) {
+        btnPomodoro.classList.remove('selected-btn');
+        btnLongBreak.classList.add('selected-btn');
+    } else if (btnShortBreak.classList.contains('selected-btn')) {
+        btnShortBreak.classList.remove('selected-btn');
+        btnLongBreak.classList.add('selected-btn');
+    }
+        
+});
 
 
 /* Funções */

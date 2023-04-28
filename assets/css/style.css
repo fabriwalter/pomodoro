@@ -85,6 +85,18 @@ html, body {
 
 /*
 
+
+
+/* Classes Botões Secundários
+------------------------------------- */
+
+.selected-btn {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+
+/*
+
 https://blog.hubspot.com/website/opacity-css#:~:text=To%20set%20the%20opacity%20of,invisible).
 
 */
