@@ -1,3 +1,59 @@
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+    .timer {
+        font-size: 3rem;
+    }
+    
+    .div-start-timer .btn {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #181818;
+    }
+}
+
+/* Medium devices (tablets, 768px e superior) */
+@media (min-width: 768px) {
+    .timer {
+        font-size: 4em;
+    }
+
+    .div-start-timer .btn {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #181818;
+    }
+}
+
+/* Large devices (desktops, 992px e superior) */
+@media (min-width: 992px) {
+    .timer {
+        font-size: 6em;
+    }
+
+    .div-start-timer .btn {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #181818;
+    }
+    
+}
+
+/* Extra large devices (large desktops, 1200px e superior */
+@media (min-width: 1200px) {
+    .timer {
+        font-size: 8em;
+    }
+
+    .div-start-timer .btn {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #181818;
+    }
+    
+}
+
+
+
 html, body {
     background-color: #181818 !important;
 }
@@ -49,10 +105,6 @@ html, body {
     padding: 10px;
 }
 
-.timer {
-    font-size: 8em;
-}
-
 
 
 
@@ -70,11 +122,6 @@ html, body {
     height: 100%;
 }
 
-.div-start-timer .btn {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #181818;
-}
 
 
 /* Sobreescrevendo Bootstrap
