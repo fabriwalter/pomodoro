@@ -1,3 +1,19 @@
+@media (min-width: 0) {
+    .timer {
+        font-size: 2rem;
+    }
+
+    .div-start-timer .btn {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: #181818;
+    }
+
+    .div-start-timer {
+        height: 2rem;
+    }
+}
+
 /* Small devices (landscape phones) */
 @media (min-width: 576px) {
     .timer {
@@ -8,6 +24,10 @@
         font-size: 1.1rem;
         font-weight: 400;
         color: #181818;
+    }
+
+    .div-start-timer {
+        height: 4rem;
     }
 }
 
@@ -116,11 +136,6 @@ body {
 
 /* Botão Start 
 -------------------------- */
-
-
-.div-start-timer {
-    height: 4rem;
-}
 
 .btn-start-timer {
     width: 75%;
