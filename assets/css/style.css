@@ -58,6 +58,11 @@ html, body {
     background-color: #181818 !important;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* Navbar
@@ -154,4 +159,8 @@ html, body {
 .footer-arr {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.6em;
+}
+
+.sticky-footer {
+    margin-top: auto;
 }
